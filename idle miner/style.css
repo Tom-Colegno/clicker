@@ -1,0 +1,98 @@
+.controls{
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    background-image: url('images/mine.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    max-width: 1920px;
+    max-height: 1080px;
+    overflow: hidden; /* Pour cacher tout contenu qui dépasse la taille spécifiée */
+}
+
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+
+#gold {
+    font-size: 24px;
+    color: #ffd700; /* Couleur or */
+}
+
+button {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: transparent; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Ajout pour l'animation du survol */
+}
+
+button:hover {
+    transform: scale(2); /* Ajout pour agrandir le bouton au survol */
+}
+
+.bouton {
+    width: 50px;
+    
+}
+
+h1,span{
+    font-family: 'Acknowledgement', sans-serif;
+    box-shadow: #333;
+}
+
+p{
+    font-size: 1.2rem;
+    color: aliceblue;
+    font-family: 'Texas Tango BOLD PERSONAL USE', sans-serif;
+}
+
+span{
+    color: #ffd700;
+    font-weight: bold;
+    background-color: #00000080;
+}
+
+span:hover{
+    background-color: #333;
+}
+
+
+#miner {
+    position: relative;
+    bottom: 50%; /* Modifier */
+    left: 50%; /* Modifier */
+    transform: translateX(-50%); /* Modifier */
+    width: 50px;
+    height: 50px;
+    margin-bottom: 100%;
+}
+
+@keyframes mine {
+    0% { transform: translateY(0px) }
+    50% { transform: translateY(-5px) }
+    100% { transform: translateY(0px) }
+}
+
+#miner img {
+    width: 256px;
+    height: 256px;
+    animation: mine 1s infinite;
+}
+
+#fullscreen-button {
+    position: absolute;
+    bottom: 10px; /* Ajustez cette valeur selon votre préférence pour l'espacement par rapport au bas de la page */
+    right: 10px; /* Place le bouton en bas à droite de son conteneur */
+}

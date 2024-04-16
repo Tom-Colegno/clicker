@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idle Gold Miner</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.cdnfonts.com/css/acknowledgement" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/texas-tango-personal-use" rel="stylesheet">
+</head>
+<body>
+    <div class="controls">
+    <h1><button onclick="resetGame()"><img class="bouton" src="images/renitialiser.svg"></button></h1>
+    <h1><button  onclick="toggleBackgroundMusic()"><img class="bouton" src="images/sound.svg"></button></h1>
+    </div>
+<div>
+    <p>Gold: <span id="gold">0</span></p>
+    <button onclick="clickGold()"> <img class="bouton" src="images/pioche.svg"></button>
+    <p>Améliorer le mineur: <span id="minerCost">10</span> gold</p>
+    <button onclick="upMiner()"><img class="bouton" src="images/lvlup.svg"></button>
+    <p>Café: <span id="minerCost">200</span> gold</p>
+    <button onclick="upCafe()"><img class="bouton" src="images/cafe.svg"></button>
+    <p>Boisson energisante: <span id="minerCost">2000</span> gold</p>
+    <button onclick="upRedbull()"><img class="bouton" src="images/redbull.svg"></button>
+    <p>Dynamite: <span id="minerCost">20000</span> gold</p>
+    <button onclick="up()"><img class="bouton" src="images/dynamite.svg"></button>
+    <button onclick="fullScreen()"><img class="bouton" id="fullscreen-button" src="images/ecran.svg"></button>
+</div>
+    <div id="miner"></div>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
+
