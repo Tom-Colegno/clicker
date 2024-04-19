@@ -14,7 +14,7 @@
             <div class="controls">
                 <h1>
                     <button onclick="resetGame()">
-                        <img class="bouton" src="images/renitialiser.svg">
+                        <img class="bouton" id="button6" src="images/renitialiser.svg">
                     </button>
                 </h1>
                 <h1 class="nbGold">
@@ -24,12 +24,12 @@
                 <div class="right-button-header">
                     <h1>
                         <button  onclick="toggleBackgroundMusic()">
-                            <img class="bouton" src="images/music.svg">
+                            <img class="bouton" id="button7" src="images/music.svg">
                         </button>
                     </h1>
                     <h1>
                         <button onclick="muteSoundEffects()">
-                            <img class="bouton" src="images/sound.svg">
+                            <img class="bouton" id="button8" src="images/sound.svg">
                         </button>
                     </h1>
                     <h1>
@@ -41,25 +41,26 @@
             </div>
         </nav>
     </header>
+    <div id="element"></div>
     <div class="update">
         <button onclick="clickGold()">
-            <img class="bouton" id="button" src="images/pioche.svg">
+            <img class="bouton" id="button1" src="images/pioche.svg">
         </button>
         <p>Améliorer le mineur: <span id="minerCost">10</span> gold</p>
         <button onclick="upMiner()">
-            <img class="bouton" id="button" src="images/lvlup.svg">
+            <img class="bouton" id="button2" src="images/lvlup.svg">
         </button>
         <p>Café: <span id="cafeCost">200</span> gold</p>
         <button onclick="upCafe()">
-            <img class="bouton" id="button" src="images/cafe.svg">
+            <img class="bouton" id="button3" src="images/cafe.svg">
         </button>
         <p>Boisson energisante: <span id="redbullCost">2000</span> gold</p>
         <button onclick="upRedbull()">
-            <img class="bouton" id="button" src="images/redbull.svg">
+            <img class="bouton" id="button4" src="images/redbull.svg">
         </button>
         <p>Dynamite: <span id="dynamiteCost">200000</span> gold</p>
         <button onclick="upDynamite()">
-            <img class="bouton" id="button" src="images/dynamite.svg">
+            <img class="bouton" id="button5" src="images/dynamite.svg">
         </button>
     </div>
     <div id="dynamite"></div>
