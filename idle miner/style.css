@@ -266,3 +266,8 @@ body, .update {
 #button3 {
     cursor: url('images/cuillere.png') 10 10, auto;
 }
+
+/* Appliquer une image personnalisée comme curseur de la souris pour la canette */
+#button4 {
+    cursor: url('images/take.png') 10 10, auto;
+}
