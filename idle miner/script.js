@@ -5,7 +5,7 @@ let miners = 200;
 let goldMultiplierBase = 15; // Multiplicateur de gold de base : 1.5
 let goldMultiplierIncrement = 1.5; // Incrément du multiplicateur à chaque amélioration
 let redbull = 2000;
-let dynamite = 20000;
+let dynamite = 200000;
 
 // Fonction pour extraire de l'or manuellement
 function clickGold() {
@@ -152,6 +152,20 @@ function autoMine() {
     gold += miners;
     updateUI();
 }
+
+// Fonction de mise à jour de l'interface utilisateur
+function updateUI() {
+    // Arrondir la valeur de gold à l'entier le plus proche avant de l'afficher
+    document.getElementById("gold").textContent = Math.round(gold);
+
+    // Mettre à jour le coût de l'amélioration du mineur
+    document.getElementById("minerCost").textContent = Math.round(minerCost);
+    
+    // Mettre à jour l'interface du mineur
+    updateMiners();
+}
+
+
 
 // Mise à jour automatique de l'or toutes les secondes
 setInterval(autoMine, 1000);
