@@ -271,3 +271,8 @@ body, .update {
 #button4 {
     cursor: url('images/take.png') 10 10, auto;
 }
+
+/* Appliquer une image personnalisée comme curseur de la souris pour la dynamite */
+#button5 {
+    cursor: url('images/briquet.png') 10 10, auto;
+}
