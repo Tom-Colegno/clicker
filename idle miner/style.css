@@ -50,7 +50,7 @@ button:hover {
 }
 
 .update{
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 h1, span {
@@ -157,3 +157,22 @@ span:hover{
     display: flex;
     justify-content: flex-end;
 }*/
+
+/* Animation pour agrandir et réduire le bouton de la pioche */
+@keyframes subtleGrowShrink {
+    0% {
+        transform: scale(1); /* Taille normale au début */
+    }
+    50% {
+        transform: scale(1.23); /* Taille légèrement agrandie à mi-chemin */
+    }
+    100% {
+        transform: scale(1); /* Retour à la taille normale à la fin */
+    }
+}
+
+/* Appliquer l'animation au bouton de la pioche */
+#button {
+    animation: subtleGrowShrink 2s infinite; /* Animation de 1 seconde en boucle */
+}
+
