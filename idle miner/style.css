@@ -262,6 +262,7 @@ body, .update {
 #button2 {
     cursor: url('images/lvlup.png') 10 10, auto;
 }
-
-
-
+/* Appliquer une image personnalisée comme curseur de la souris pour le cafe */
+#button3 {
+    cursor: url('images/cuillere.png') 10 10, auto;
+}
