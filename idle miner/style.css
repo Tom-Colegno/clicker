@@ -257,3 +257,11 @@ body, .update {
 #button1 {
     cursor: url('images/mouse.png') 10 10, auto;
 }
+
+/* Appliquer une image personnalisée comme curseur de la souris pour lvl up */
+#button2 {
+    cursor: url('images/lvlup.png') 10 10, auto;
+}
+
+
+
