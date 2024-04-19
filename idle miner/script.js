@@ -147,6 +147,30 @@ function dynamiteExplosion() {
     console.log("Boom! Dynamite exploded!");
 }
 
+// Définir un facteur d'augmentation du gain d'or
+let goldGainIncrement = 4; // Facteur d'augmentation (ajustez selon vos besoins)
+
+function upDynamite() {
+    if (gold >= dynamite) {
+        gold -= dynamite;
+        
+        // Ajouter les fonctionnalités spécifiques à la dynamite
+        dynamiteExplosion(); // Appel de la fonction d'explosion de dynamite
+        
+        // Augmenter le coût de la dynamite de 225 000
+        dynamite += 225000;
+
+        // Mettre à jour l'interface utilisateur et sauvegarder les données
+        updateUI();
+        saveGame();
+        
+        updateDynamite(); // Afficher le GIF de l'explosion de la dynamite
+        powerSound.play(); // Jouer le son de la dynamite
+    } else {
+        alert("Vous n'avez pas assez d'or pour acheter de la dynamite.");
+    }
+}
+
 // Fonction de mise à jour de l'interface utilisateur
 function updateUI() {
     document.getElementById("gold").textContent = gold;
@@ -354,26 +378,4 @@ function updateUI() {
     updateMiners();
 }
 
-// Définir un facteur d'augmentation du gain d'or
-let goldGainIncrement = 4; // Facteur d'augmentation (ajustez selon vos besoins)
 
-function upDynamite() {
-    if (gold >= dynamite) {
-        gold -= dynamite;
-        
-        // Ajouter les fonctionnalités spécifiques à la dynamite
-        dynamiteExplosion(); // Appel de la fonction d'explosion de dynamite
-        
-        // Augmenter le coût de la dynamite de 225 000
-        dynamite += 225000;
-
-        // Mettre à jour l'interface utilisateur et sauvegarder les données
-        updateUI();
-        saveGame();
-        
-        updateDynamite(); // Afficher le GIF de l'explosion de la dynamite
-        powerSound.play(); // Jouer le son de la dynamite
-    } else {
-        alert("Vous n'avez pas assez d'or pour acheter de la dynamite.");
-    }
-}
