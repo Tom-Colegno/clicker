@@ -2,7 +2,10 @@
 let gold = 150;
 let minerCost = 100;
 let miners = 200;
+let cafeCost = 200; // Coût initial du café
+let goldPerCafe = 150; // Gain initial d'or par café donné
 let goldMultiplierBase = 15; // Multiplicateur de gold de base : 1.5
+let minersGoldMultiplier = 2; // Définition de la variable et initialisation à 2
 let goldMultiplierIncrement = 1.5; // Incrément du multiplicateur à chaque amélioration
 let redbull = 2000;
 let dynamite = 200000;
@@ -34,23 +37,26 @@ function upMiner() {
     lvlupSound.play();
 }
 
-// Initialisation des variables pour le café
-let cafeCost = 200; // Coût initial du café
-let goldPerCafe = 150; // Gain initial d'or par café donné
+// Fonction pour mettre à jour l'affichage du coût du café
+function updateCafeCost() {
+    document.getElementById("cafeCost").textContent = cafeCost;
+}
 
-// Fonction pour donner un café au mineur
+// Appelez updateCafeCost() dans la fonction upCafe() après avoir modifié cafeCost
 function upCafe() {
     if (gold >= cafeCost) {
         gold -= cafeCost;
         goldMultiplierBase *= 1.5; // Augmenter le multiplicateur de gold de base
-        cafeCost = Math.ceil(cafeCost * 1.2); // Augmentation exponentielle du coût du café
-        goldPerCafe = Math.ceil(goldPerCafe * 2.5); // Augmentation exponentielle du gain d'or par café
+        cafeCost = Math.ceil(cafeCost * 1.5); // Augmentation du coût du café
+        goldPerCafe = Math.ceil(goldPerCafe * 2.5); // Augmentation du gain d'or par café
         updateUI();
     } else {
         alert("Vous n'avez pas assez d'or pour donner un café au mineur.");
     }
     cafeSound.play(); // Jouer le son du café
 }
+
+
 
 
 // Variable pour stocker la durée du boost en millisecondes (30 secondes)
@@ -66,11 +72,11 @@ function upRedbull() {
         updateUI();
 
         // Appliquer le boost sur le mineur pendant 30 secondes
-        minersGoldMultiplier *= 2;
+        minersGoldMultiplier *= 2; // Doubler le multiplicateur
 
         // Annuler le boost après la durée spécifiée
         setTimeout(function() {
-            minersGoldMultiplier /= 2;
+            minersGoldMultiplier /= 2; // Réinitialiser le multiplicateur
             updateUI(); // Mettre à jour l'interface utilisateur après l'expiration du boost
         }, boostDuration);
     } else {
@@ -78,6 +84,7 @@ function upRedbull() {
     }
     redbullSound.play();
 }
+
 
 
 // Fonction pour mettre à jour le GIF du mineur en fonction de l'action
@@ -144,8 +151,15 @@ function dynamiteExplosion() {
 function updateUI() {
     document.getElementById("gold").textContent = gold;
     document.getElementById("minerCost").textContent = minerCost;
+
+    // Mettez à jour les affichages des prix des améliorations
+    document.getElementById("cafeCost").textContent = cafeCost; // Affiche le coût du café
+    document.getElementById("dynamiteCost").textContent = dynamite; // Affiche le coût de la dynamite
+    document.getElementById("redbullCost").textContent = redbull; // Affiche le coût de Red Bull
+
     updateMiners();
 }
+
 
 // Fonction pour générer de l'or automatiquement grâce aux mineurs
 function autoMine() {
@@ -176,17 +190,18 @@ function saveGame() {
     localStorage.setItem("gold", gold);
     localStorage.setItem("minerCost", minerCost);
     localStorage.setItem("miners", miners);
-    localStorage.setItem("cafe", cafe);
+    localStorage.setItem("cafeCost", cafeCost);
     localStorage.setItem("redbull", redbull);
     localStorage.setItem("dynamite", dynamite);
 }
+
 
 // Chargement de l'état du jeu depuis le localStorage
 function loadGame() {
     gold = parseInt(localStorage.getItem("gold")) || gold;
     minerCost = parseInt(localStorage.getItem("minerCost")) || minerCost;
     miners = parseInt(localStorage.getItem("miners")) || miners;
-    cafe = parseInt(localStorage.getItem("cafe")) || cafe;
+    cafe = parseInt(localStorage.getItem("cafeCost")) || cafe;
     redbull = parseInt(localStorage.getItem("redbull")) || redbull;
     dynamite = parseInt(localStorage.getItem("dynamite")) || dynamite;
     updateUI();
@@ -201,13 +216,14 @@ setInterval(saveGame, 1000);
 // Fonction pour réinitialiser le jeu
 function resetGame() {
     // Réinitialiser les variables du jeu
-    gold = 150;
+    gold = 0;
     minerCost = 100;
-    miners = 200;
+    miners = 0;
+    cafe = 200
     goldMultiplierBase = 15; // Multiplicateur de gold de base : 1.5
     goldMultiplierIncrement = 1.5; // Incrément du multiplicateur à chaque amélioration
     redbull = 2000;
-    dynamite = 20000;
+    dynamite = 200000;
     
     // Réinitialiser l'interface utilisateur
     updateUI();
@@ -319,5 +335,22 @@ function updateFullscreenButton() {
     // Sinon, affichez un bouton pour activer le plein écran
     fullscreenButton.textContent = 'Fullscreen';
   }
+}
+
+
+function updateUI() {
+    // Arrondir la valeur de gold à l'entier le plus proche avant de l'afficher
+    document.getElementById("gold").textContent = Math.round(gold);
+
+    // Mettre à jour le coût de l'amélioration du mineur
+    document.getElementById("minerCost").textContent = Math.round(minerCost);
+    
+    // Mettre à jour les coûts des améliorations
+    document.getElementById("cafeCost").textContent = Math.round(cafeCost);
+    document.getElementById("redbullCost").textContent = Math.round(redbull);
+    document.getElementById("dynamiteCost").textContent = Math.round(dynamite);
+    
+    // Mettre à jour l'interface du mineur
+    updateMiners();
 }
 
