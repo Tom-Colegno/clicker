@@ -75,6 +75,25 @@ span:hover{
     background-color: #333;
 }
 
+/* Animation pour agrandir et réduire le nombre d'or */
+@keyframes growShrink {
+    0% {
+        transform: scale(1); /* Taille normale au début */
+    }
+    50% {
+        transform: scale(1.5); /* Taille agrandie à mi-chemin */
+    }
+    100% {
+        transform: scale(1); /* Retour à la taille normale à la fin */
+    }
+}
+
+/* Appliquer l'animation à l'élément contenant le nombre d'or */
+#gold {
+    animation: growShrink 2s infinite; /* Animation de 2 secondes en boucle */
+}
+
+
 
 #miner {
     position: relative;
@@ -128,7 +147,7 @@ span:hover{
 }
 
 .nbGold img {
-    margin-left: 10px; /* Ajoute un espace entre l'image et le texte */
+    margin-left: 60px; /* Ajoute un espace entre l'image et le texte */
 }
 
 /*fullscreen-button {
