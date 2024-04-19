@@ -255,7 +255,7 @@ body, .update {
 
 /* Appliquer une image personnalisée comme curseur de la souris pour la pioche */
 #button1 {
-    cursor: url('images/mouse.png') 10 10, auto;
+    cursor: url('images/pioche.png') 10 10, auto;
 }
 
 /* Appliquer une image personnalisée comme curseur de la souris pour lvl up */
@@ -275,4 +275,8 @@ body, .update {
 /* Appliquer une image personnalisée comme curseur de la souris pour la dynamite */
 #button5 {
     cursor: url('images/briquet.png') 10 10, auto;
+}
+/* Appliquer une image personnalisée comme curseur de la souris pour le reset */
+#button6 {
+    cursor: url('images/delete.png') 10 10, auto;
 }
