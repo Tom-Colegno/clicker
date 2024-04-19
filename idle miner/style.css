@@ -1,5 +1,6 @@
 .controls{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -34,6 +35,7 @@ button {
     color: transparent; 
     border: none;
     border-radius: 5px;
+    margin-left: 50px;
     cursor: pointer;
     transition: transform 0.3s ease; /* Ajout pour l'animation du survol */
 }
@@ -43,25 +45,30 @@ button:hover {
 }
 
 .bouton {
-    width: 50px;
+    width: 60px;
     
 }
 
-h1,span{
-    font-family: 'Acknowledgement', sans-serif;
-    box-shadow: #333;
+.update{
+    padding-top: 20px;
 }
 
-p{
+h1, span {
+    font-family: 'Acknowledgement', sans-serif;
+    text-shadow: 1px 1px 2px #c8a165, 0 0 1em #d4af37, 0 0 0.2em #ffd700;
+}
+
+p {
     font-size: 1.2rem;
     color: aliceblue;
     font-family: 'Texas Tango BOLD PERSONAL USE', sans-serif;
+    text-shadow: 1px 1px 2px #c8a165, 0 0 1em #d4af37, 0 0 0.2em #ffd700;
 }
 
 span{
     color: #ffd700;
     font-weight: bold;
-    background-color: #00000080;
+    text-shadow: #00000080;
 }
 
 span:hover{
@@ -79,6 +86,16 @@ span:hover{
     margin-bottom: 100%;
 }
 
+/*#dynamite{
+    position: relative;
+    bottom: 50%;
+    left: 50%; 
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    margin-bottom: 100%;  
+}*/
+
 @keyframes mine {
     0% { transform: translateY(0px) }
     50% { transform: translateY(-5px) }
@@ -91,8 +108,33 @@ span:hover{
     animation: mine 1s infinite;
 }
 
-#fullscreen-button {
-    position: absolute;
-    bottom: 10px; /* Ajustez cette valeur selon votre préférence pour l'espacement par rapport au bas de la page */
-    right: 10px; /* Place le bouton en bas à droite de son conteneur */
+/*#dynamite img{
+    width: 256px;
+    height: 256px;
+}*/
+
+.right-button-header {
+    display: flex;
+    flex-direction: row;
 }
+
+.nbGold {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;  
+    vertical-align: middle;
+    margin-left: 115px;
+}
+
+.nbGold img {
+    margin-left: 10px; /* Ajoute un espace entre l'image et le texte */
+}
+
+/*fullscreen-button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: flex-end;
+}*/
