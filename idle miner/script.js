@@ -354,3 +354,26 @@ function updateUI() {
     updateMiners();
 }
 
+function upDynamite() {
+    if (gold >= dynamite) {
+        gold -= dynamite;
+        
+        // Ajouter les fonctionnalités spécifiques à la dynamite
+        // Par exemple, augmenter la puissance du mineur, débloquer de nouvelles zones de minage, etc.
+        dynamiteExplosion(); // Appel de la fonction d'explosion de dynamite
+        
+        // Augmenter le coût de la dynamite de 50 000
+        dynamite += 50000;
+        
+        // Mettre à jour l'interface utilisateur et sauvegarder les données
+        updateUI();
+        saveGame();
+        
+        updateDynamite(); // Afficher le GIF de l'explosion de la dynamite
+        powerSound.play(); // Jouer le son de la dynamite
+    } else {
+        alert("Vous n'avez pas assez d'or pour acheter de la dynamite.");
+    }
+}
+
+
